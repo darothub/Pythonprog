@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <!-- http://getbootstrap.com/docs/4.1/components/alerts/ -->
+    <div class="alert alert-info container col-md-9" role="alert">
+        <h4 class="alert-heading">Registered</h4>
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Full Name</th>
+                <th scope="col">School</th>
+                <th scope="col">State of Origin</th>
+                <th scope="col">Year of Graduation</th>
+                <th scope="col">Email Address</th>
+                <th scope="col">Flat No</th>
+                <th scope="col">Gender</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for info in info_tup %}
+            <tr>
+                <td>{{info[0]}}</td>
+                <td>{{info[1]}}</td>
+                <td>{{info[2]}}</td>
+                <td>{{info[3]}}</td>
+                <td>{{info[4]}}</td>
+                <td>{{info[5]}}</td>
+                <td>{{info[6]}}</td>
+            </tr>
+             {%endfor%}
+        </tbody>
+        </table>
+        <ul>
+            {% for info in info_tup %}
+            <li>{{info[0]}} from {{info[1]}}</li>
+            {%endfor%}
+        </ul>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <div class="col">
+
+        <form action="/compare" enctype="multipart/form-data" method="post">
+
+            <!-- TODO -->
+          <div class="container col-md-4 mt-5 ">
+            <div class="custom-file mt-2">
+              <input type="file" name="file1" class="custom-file-input" id="validatedCustomFile" required>
+              <label class="custom-file-label" for="validatedCustomFile">File1...</label>
+              <div class="invalid-feedback">Example invalid custom file feedback</div>
+            </div>
+            <div class="custom-file mt-2">
+              <input type="file" name="file2" class="custom-file-input" id="validatedCustomFile" required>
+              <label class="custom-file-label" for="validatedCustomFile">File2...</label>
+              <div class="invalid-feedback">Example invalid custom file feedback</div>
+            </div>
+
+              <div class=" collapsed input-group mt-2" id="number">
+                <input type="number" name="length" class="form-control" placeholder="length for substring" aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+
+            <select name="algorithm" class="custom-select mt-2">
+              <option selected disabled>Choose Algorithm</option>
+              <option value="lines">Lines</option>
+              <option  value="sentences">Sentences</option>
+              <option data-toggle="collapse" data-target="#number" value="substrings">Substring</option>
+            </select>
+
+            <button type="submit" class="btn btn-success mt-2">Compare</button>
+
+          </div>
+
+
+        </form>
+    </div>
+
+{% endblock %}
